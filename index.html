@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="richReddit">
+	<head>
+		<title>Rich Man's Reddit</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+		<div ng-controller="redditController">
+
+			<h2>Rich Man's Reddit</h2>
+			<div ng-repeat="pet in pets" id="contain">
+				<div id="title">
+					{{pet.data.title}}
+					
+				</div>
+
+				<div id="author">
+					by: {{pet.data.author}}
+				</div>
+
+				<div id="img">
+					<!-- <img ng-src="{{pet.data.url}}"> -->
+					<img ng-src="{{pet.data.preview.images[0].source.url}}">
+					<img ng-src="{{pet.data.preview.images[0].variants.gif.source.url}}">
+				</div>
+			</div>
+		</div>
+		<script src="lib/angular.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>
